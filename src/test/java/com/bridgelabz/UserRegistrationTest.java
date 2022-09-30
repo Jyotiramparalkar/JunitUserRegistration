@@ -28,6 +28,13 @@ public class UserRegistrationTest
         String emailId = "parkarjack@gmail.com";
         Assert.assertEquals("parkarjack@gmail.com" , userRegistration.isEmailValid(emailId));
     }
+    @Test
+    public void checking_if_invalid_phone_number()
+    {
+        UserRegistration userRegistration = new UserRegistration();
+        String phoneNumber = "914552114";
+        Assert.assertEquals("914552114" , userRegistration.isPhoneNumberValid(phoneNumber));
+    }
 
 
 }

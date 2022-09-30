@@ -2,6 +2,7 @@ package com.bridgelabz;
 
 public class UserRegistration
 {
+
     public String isFirstNameValid(String firstName)
     {
         if(firstName.contains("Jack"))
@@ -36,6 +37,18 @@ public class UserRegistration
         {
             return "Invalid mail-ID";
         }
+    }
+    public String isPhoneNumberValid(String phoneNumber)
+    {
+        if(phoneNumber.contains("914552114"))
+        {
+            return "914552114";
+        }
+        else
+        {
+            return "Invalid Phone Number";
+        }
+
     }
 
 }
