@@ -29,6 +29,7 @@ public class UserRegistrationTest
         Assert.assertEquals("parkarjack@gmail.com" , userRegistration.isEmailValid(emailId));
     }
     @Test
+
     public void checking_if_invalid_phone_number()
     {
         UserRegistration userRegistration = new UserRegistration();
