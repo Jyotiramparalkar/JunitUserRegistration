@@ -89,5 +89,17 @@ public class UserRegistrationTest
         boolean returnResult= userRegistration.passwordRule3("Validate");
         Assert.assertFalse(returnResult);
     }
-
+    // UC-8 Rule4 – Has exactly 1 Special Char
+    @Test
+    public void Checking_with_special_character_password_return_true (){
+        UserRegistration userRegistration = new UserRegistration();
+        boolean returnResult= userRegistration.passwordRule4("Validate1@");
+        Assert.assertTrue(returnResult);
+    }
+    @Test
+    public void Checking_without_special_character_password_return_false(){
+        UserRegistration userRegistration = new UserRegistration();
+        boolean returnResult= userRegistration.passwordRule4("Validate1");
+        Assert.assertFalse(returnResult);
+    }
 }
