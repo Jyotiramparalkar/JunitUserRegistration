@@ -75,5 +75,19 @@ public class UserRegistrationTest
         boolean returnResult = userRegistration.passwordRule2("validate");
         Assert.assertFalse(returnResult);
     }
+    //UC7 Rule3– Should have at least 1 number
+
+    @Test
+    public void Checking_with_numeric_character_password_return_true(){
+        UserRegistration userRegistration = new UserRegistration();
+        boolean returnResult= userRegistration.passwordRule3("Validate1");
+        Assert.assertTrue(returnResult);
+    }
+    @Test
+    public void Checking_without_numeric_character_password_return_false(){
+        UserRegistration userRegistration = new UserRegistration();
+        boolean returnResult= userRegistration.passwordRule3("Validate");
+        Assert.assertFalse(returnResult);
+    }
 
 }
