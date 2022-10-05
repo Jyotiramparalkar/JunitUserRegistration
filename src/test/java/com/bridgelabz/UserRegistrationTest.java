@@ -37,5 +37,43 @@ public class UserRegistrationTest
         Assert.assertEquals("914552114" , userRegistration.isPhoneNumberValid(phoneNumber));
     }
 
+    //UC-5 As a User need to follow pre-defined Password rules.
+
+    @Test
+    public void checking_8_characters_password_return_true()
+    {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean returnResult = userRegistration.password("Validate");
+        Assert.assertTrue(returnResult);
+    }
+
+    @Test
+    public void checking_More_than_8_character_password_return_false() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean returnResult = userRegistration.password("Sufficient");
+        Assert.assertFalse(returnResult);
+    }
+
+    @Test
+    public void checking_less_Than_8_character_password_return_false() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean returnResult = userRegistration.password("cool");
+        Assert.assertFalse(returnResult);
+    }
+    // UC-6 Should have at least 1
+    ///Upper Case - NOTE – All rules must be passed
+    @Test
+    public void checking_upperCase_character_password_return_true() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean returnResult = userRegistration.passwordRule2("Validate");
+        Assert.assertTrue(returnResult);
+    }
+
+    @Test
+    public void checking_without_uppercase_character_password_return_false() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean returnResult = userRegistration.passwordRule2("validate");
+        Assert.assertFalse(returnResult);
+    }
 
 }
